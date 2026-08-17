@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Order</title>
+</head>
+
+<body style="background:linear-gradient(135deg, #0f2027, #203a43, #2c5364);color: white;">
+
+    <h1>Add Order</h1>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <label>Customer:</label>
+
+        <select name="customer" required>
+            <option value="">Select Customer</option>
+
+            {% for customer in customers %}
+                <option value="{{ customer.id }}">
+                    {{ customer.name }}
+                </option>
+            {% endfor %}
+
+        </select>
+
+        <br><br>
+
+        <label>Total Amount:</label>
+        <input type="number" name="amount" step="0.01" required>
+
+        <br><br>
+
+        <button type="submit">Add Order</button>
+
+    </form>
+
+</body>
+</html>

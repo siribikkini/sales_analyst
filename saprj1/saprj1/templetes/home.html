@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Dashboard</title>
+</head>
+
+
+<body style="background:linear-gradient(135deg, #0f2027, #203a43, #2c5364); background-image: url(https://th.bing.com/th/id/R.991f0b8e2a98eb4e7945a15652cbb0ba?rik=YKUFjSG%2bFL5Vxw&riu=http%3a%2f%2fcobit-solutions.com%2fen%2fwp-content%2fuploads%2fsites%2f2%2f2023%2f11%2fsales-blog.jpg&ehk=UjUsKJn9dsLbptRAJu43c1oLCIU%2fckxAknlN381sQgU%3d&risl=&pid=ImgRaw&r=0);background-attachment: fixed;background-size: cover; background-repeat: no-repeat;">
+
+    <!-- <h1 style="text-align: center; size: 8vw; color: rgb(167, 217, 224);">SALES DASHBOARD</h1> -->
+<div style="
+  
+    margin-top:24.5vw;
+    margin-left: 5%;
+    margin-right: 85%;
+    
+">
+
+    <div style="border: 2px solid gray; padding: 10px; background-color: black;">
+        <a href="{% url 'products' %}" style="color: white; text-decoration: none;">
+            Products
+        </a>
+    </div>
+
+    <div style="border: 2px solid gray; padding: 15px; background-color: black;">
+        <a href="{% url 'customers' %}" style="color: white; text-decoration: none;">
+            Customers
+        </a>
+    </div>
+
+    <div style="border: 2px solid gray; padding: 15px; background-color: black;">
+        <a href="{% url 'orders' %}" style="color: white; text-decoration: none;">
+            Orders
+        </a>
+    </div>
+
+    <div style="border: 2px solid gray; padding: 15px; background-color: black;">
+        <a href="{% url 'my_admin' %}" style="color: white; text-decoration: none;">
+            Admin
+        </a>
+    </div>
+
+    <div style="border: 2px solid gray; padding: 15px; background-color: black;">
+        <a href="{% url 'order_items' %}" style="color: white; text-decoration: none;">
+            Order Items
+        </a>
+    </div>
+
+    <div style="border: 2px solid gray; padding: 15px; background-color: black;">
+        <a href="{% url 'analytic_page' %}" style="color: white; text-decoration: none;">
+            Analytics
+        </a>
+    </div>
+
+</div>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Items</title>
+</head>
+
+<body style="background:linear-gradient(135deg, #0f2027, #203a43, #2c5364);color: white;">
+
+    <h2>Order Items</h2>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <label>Order:</label>
+        <select name="order" required>
+            <option value="">Select Order</option>
+
+            {% for order in orders %}
+                <option value="{{ order.id }}">
+                    Order {{ order.id }} - {{ order.customer }}
+                </option>
+            {% endfor %}
+
+        </select>
+
+        <br><br>
+
+        <label>Product:</label>
+        <select name="product" required>
+            <option value="">Select Product</option>
+
+            {% for product in products %}
+                <option value="{{ product.id }}">
+                    {{ product.name }} - {{ product.price }}
+                </option>
+            {% endfor %}
+
+        </select>
+
+        <br><br>
+
+        <label>Quantity:</label>
+        <input type="number" name="quantity" min="1" required>
+
+        <br><br>
+
+        <button type="submit" min="1">Add Order Item</button><br></br>
+        
+
+    </form>
+
+    <hr>
+
+    <h2>Order Items List</h2>
+
+    {% for orderitem in orderitems %}
+
+        <p>Order: {{ orderitem.order }}</p>
+        <p>Product: {{ orderitem.product }}</p>
+        <p>Quantity: {{ orderitem.quantity }}</p>
+        <p>Price: {{ orderitem.price }}</p>
+        <p>subtotal:{{orderitem.subtotal}}</p>
+
+        <hr>
+
+        <a href="{% url 'delete_orderitem' orderitem.id %}">
+     <button type="button">Delete</button>
+    </a>
+
+        
+
+
+{%endfor%}
+
+ 
+
+</body>
+</html>
